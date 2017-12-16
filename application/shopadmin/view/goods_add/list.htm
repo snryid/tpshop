@@ -40,7 +40,7 @@
 							<li>
 								<a href="{:url('Index/index')}">系统</a>
 							</li>
-							<li class="active">品牌管理</li>
+							<li class="active">添加商品</li>
 						</ul>
 					</div>
 					<!-- /Page Breadcrumb -->
@@ -68,41 +68,12 @@
 						                            </tr>
 						                        </thead>
 						                        <tbody>
-						                            {volist name="brandRes" id="brand"}
-						                                <tr>
-						                                    <td align="center">{$brand.id}</td>
-						                                    <td align="center">{$brand.brand_name}</td>
-						                                    <td><a href="{$brand.brand_url}" target="_blank">{$brand.brand_url}</a></td>
-						                                    <td align="center">
-						                                    {if condition="$brand['brand_img'] neq ''"}
-						                                        <img src="__uploads__/{$brand.brand_img}" height="30">
-						                                    {else /}
-						                                        暂无图片
-						                                    {/if}
-						                                    </td>
-						                                    <td>{$brand.brand_description|cut_str=###,10}</td>
-						                                    <td align="center">
-						                                        {if condition="$brand['status'] eq 1"}
-						                                           <img src="__admin__/images/right.png" height="30"> 
-						                                        {else /}
-						                                            <img src="__admin__/images/wrong.png" height="25"> 
-						                                        {/if}
-						                                    </td>
-						                                    <td align="center">
-						                                        <a href="{:url('edit',array('id'=>$brand['id']))}" class="btn btn-primary btn-sm shiny">
-						                                            <i class="fa fa-edit"></i> 编辑
-						                                        </a>
-						                                        <a href="#" onClick="warning('确实要删除吗', '{:url('del',array('id'=>$brand['id']))}')" class="btn btn-danger btn-sm shiny">
-						                                            <i class="fa fa-trash-o"></i> 删除
-						                                        </a>
-						                                    </td>
-						                                </tr>
-						                            {/volist}
+						                           
 						                        </tbody>
 						                    </table>
 						                </div>
 						                <div style="padding-top:10px; text-align:right;">
-						                {$brandRes->render()}
+						               
 						                </div>
 						                <div> </div>
 						            </div>

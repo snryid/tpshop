@@ -1,7 +1,8 @@
 <?php
-namespace app\admin\validate;
+namespace app\shopadmin\validate;
 use think\Validate;
-class Brand extends Validate
+
+class GoodsBrand extends Validate
 {
     protected $rule =   [
         'brand_name'  => 'require|unique:brand',

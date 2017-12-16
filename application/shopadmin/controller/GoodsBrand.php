@@ -48,7 +48,7 @@ class GoodsBrand extends Common
                 $data['brand_img']=$this->upload();
             }
             //验证
-            $validate = validate('Brand');
+            $validate = validate('GoodsBrand');
             if(!$validate->check($data)){
                 $this->error($validate->getError());
             }
