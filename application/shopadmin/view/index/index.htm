@@ -28,32 +28,160 @@
 		<!-- /头部 -->
 
 		<div class="main-container container-fluid">
-			<div class="page-container">
-				<!-- Page Sidebar -->
-				{include file="common/left"}
-				<!-- /Page Sidebar -->
-				<!-- Page Content -->
-				<div class="page-content">
-					<!-- Page Breadcrumb -->
-					<div class="page-breadcrumbs">
-						<ul class="breadcrumb">
-							<li class="active">控制面板</li>
-						</ul>
-					</div>
-					<!-- /Page Breadcrumb -->
-
-					<!-- Page Body -->
-					<div class="page-body">
-
-						<div style="text-align:center; line-height:1000%; font-size:24px;">
-							TPSHOP商城后台<br />
-							<p style="color:#f00;">技术交流：<a href="http://www.snryid.top" target="view_window">snryid.top</a></p>
-						</div>
-					</div>
-
-				</div>
-				<!-- /Page Body -->
-			</div>
+			<div class="main-container container-fluid">
+					<div class="page-container">
+						<!-- Page Sidebar -->
+			            {include file="common/left"}
+			            <!-- /Page Sidebar -->
+			            <!-- Page Content -->
+			            <div class="page-content">
+			               <!-- Page Breadcrumb -->
+			                    <div class="page-breadcrumbs">
+			                        <ul class="breadcrumb">
+			                            <li>
+			                                <i class="fa fa-home"></i>
+			                                <a href="{:url('index/index')}">我的桌面</a>
+			                            </li>
+			                        </ul>
+			                    </div>
+			                <!-- Page Breadcrumb -->
+			                <!-- Page Body -->
+			                <div class="page-body">
+			                    
+			    				<table class="table table-border table-bordered table-bg">
+			                            <thead>
+			                                <tr>
+			                                    <th colspan="7" scope="col">信息统计</th>
+			                                </tr>
+			                                <tr class="text-c">
+			                                    <th>统计</th>
+			                                    <th>资讯库</th>
+			                                    <th>图片库</th>
+			                                    <th>视频库</th>
+			                                    <th>用户</th>
+			                                    <th>管理员</th>
+			                                </tr>
+			                            </thead>
+			                            <tbody>
+			                                <tr class="text-c">
+			                                    <td >总数</td>
+			                                    <td>12</td>
+			                                    <td>23</td>
+			                                    <td>5</td>       
+			                                    <td>6</td>
+			                                    <td>6</td>
+			                                </tr>
+			                                <tr class="text-c">
+			                                    <td>今日</td>
+			                                    <td>8</td>
+			                                    <td>7</td>
+			                                    <td>9</td>       
+			                                    <td>9</td>
+			                                    <td>3</td>
+			                                </tr>
+			                                <tr class="text-c">
+			                                    <td>昨日</td>
+			                                    <td>6</td>
+			                                    <td>45</td>
+			                                    <td>9</td>       
+			                                    <td>10</td>
+			                                    <td>13</td>
+			                                </tr>
+			                                <tr class="text-c">
+			                                    <td>本周</td>
+			                                    <td>69</td>
+			                                    <td>23</td>
+			                                    <td>41</td>       
+			                                    <td>32</td>
+			                                    <td>12</td>
+			                                </tr>
+			                                <tr class="text-c">
+			                                    <td>本月</td>
+			                                    <td>32</td>
+			                                    <td>12</td>
+			                                    <td>36</td>       
+			                                    <td>12</td>
+			                                    <td>32</td>
+			                                </tr>
+			                            </tbody>
+			                        </table>
+			                        <table class="table table-border table-bordered table-bg mt-20">
+			                            <thead>
+			                                <tr>
+			                                    <th colspan="2" scope="col">服务器信息</th>
+			                                </tr>
+			                            </thead>
+			                            <tbody>
+			                                <tr>
+			                                    <th width="30%">服务器计算机语言</th>
+			                                    <td><span id="lbServerName">{$info.language}</span></td>
+			                                </tr>
+			                                <tr>
+			                                    <td>服务器IP地址</td>
+			                                    <td>{$info.IP}</td>
+			                                </tr>
+			                                <tr>
+			                                    <td>服务器域名</td>
+			                                    <td>{$info.ServerName}</td>
+			                                </tr>
+			                                <tr>
+			                                    <td>服务器端口 </td>
+			                                    <td>{$info.remote_port}</td>
+			                                </tr>
+			                                <tr>
+			                                    <td>服务器运行环境</td>
+			                                    <td>{$info.server_software}</td>
+			                                </tr>
+			                                
+			                                <tr>
+			                                    <td>服务器操作系统 </td>
+			                                    <td>{$info.OS}</td>
+			                                </tr>
+			                                <tr>
+			                                    <td>PHP运行方式 </td>
+			                                    <td>{$info.PHP_move}</td>
+			                                </tr>
+			                                <tr>
+			                                    <td>服务器脚本超时时间 </td>
+			                                    <td>{$info.overtime}</td>
+			                                </tr>
+			                                <tr>
+			                                    <td>上传附件限制 </td>
+			                                    <td>{$info.updata}</td>
+			                                </tr>
+			                                
+			                                <tr>
+			                                    <td>服务器当前时间 </td>
+			                                    <td>{$info.severTime}</td>
+			                                </tr>
+			                               
+			                                <tr>
+			                                    <td>北京时间 </td>
+			                                    <td>{$info.BJtime}</td>
+			                                </tr>
+			                               
+			                               
+			                                <tr>
+			                                    <td>剩余空间 </td>
+			                                    <td>{$info.memory}</td>
+			                                </tr>
+			                                 <tr>
+			                                    <td>thinkPHP版本 </td>
+			                                    <td>{$info.ThinkPHP}</td>
+			                                </tr>
+			                                <tr>
+			                                    <td>当前系统用户名 </td>
+			                                    <td>NETWORK SERVICE</td>
+			                                </tr>
+			                            </tbody>
+			                        </table>
+			                </div>
+			                
+			                </div>
+			                <!-- /Page Body -->
+			            </div>
+			            <!-- /Page Content -->
+					</div>	
 			<!-- /Page Content -->
 		</div>
 		</div>
