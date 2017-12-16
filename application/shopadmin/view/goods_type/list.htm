@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>商品品牌</title>
+
+		<meta name="description" content="Dashboard">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--Basic Styles-->
+		<link href="__ADMIN__/style/bootstrap.css" rel="stylesheet">
+		<link href="__ADMIN__/style/font-awesome.css" rel="stylesheet">
+		<link href="__ADMIN__/style/weather-icons.css" rel="stylesheet">
+
+		<!--Beyond styles-->
+		<link id="beyond-link" href="__ADMIN__/style/beyond.css" rel="stylesheet" type="text/css">
+		<link href="__ADMIN__/style/demo.css" rel="stylesheet">
+		<link href="__ADMIN__/style/typicons.css" rel="stylesheet">
+		<link href="__ADMIN__/style/animate.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<!-- 头部 -->
+		{include file="common/head"}
+		<!-- /头部 -->
+
+		<div class="main-container container-fluid">
+			<div class="page-container">
+				<!-- Page Sidebar -->
+				{include file="common/left"}
+				<!-- /Page Sidebar -->
+				<!-- Page Content -->
+				<div class="page-content">
+					<!-- Page Breadcrumb -->
+					<div class="page-breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<a href="{:url('Index/index')}">系统</a>
+							</li>
+							<li class="active">品牌管理</li>
+						</ul>
+					</div>
+					<!-- /Page Breadcrumb -->
+
+					<!-- Page Body -->
+					<div class="page-body">
+						<button type="button" tooltip="添加品牌" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url('Brand/add')}'"> 
+							<i class="fa fa-plus"></i> Add
+						</button>
+						<div class="row">
+						    <div class="col-lg-12 col-sm-12 col-xs-12">
+						        <div class="widget">
+						            <div class="widget-body">
+						                <div class="flip-scroll">
+						                    <table class="table table-bordered table-hover">
+						                        <thead class="">
+						                            <tr>
+						                                <th class="text-center" width="8%">ID</th>
+						                                <th class="text-center">品牌名称</th>
+						                                <th>品牌地址</th>
+						                                <th class="text-center">品牌logo</th>
+						                                <th>品牌描述</th>
+						                                <th class="text-center" width="8%">品牌状态</th>
+						                                <th class="text-center" width="14%">操作</th>
+						                            </tr>
+						                        </thead>
+						                        <tbody>
+						                            {volist name="brandRes" id="brand"}
+						                                <tr>
+						                                    <td align="center">{$brand.id}</td>
+						                                    <td align="center">{$brand.brand_name}</td>
+						                                    <td><a href="{$brand.brand_url}" target="_blank">{$brand.brand_url}</a></td>
+						                                    <td align="center">
+						                                    {if condition="$brand['brand_img'] neq ''"}
+						                                        <img src="__uploads__/{$brand.brand_img}" height="30">
+						                                    {else /}
+						                                        暂无图片
+						                                    {/if}
+						                                    </td>
+						                                    <td>{$brand.brand_description|cut_str=###,10}</td>
+						                                    <td align="center">
+						                                        {if condition="$brand['status'] eq 1"}
+						                                           <img src="__admin__/images/right.png" height="30"> 
+						                                        {else /}
+						                                            <img src="__admin__/images/wrong.png" height="25"> 
+						                                        {/if}
+						                                    </td>
+						                                    <td align="center">
+						                                        <a href="{:url('edit',array('id'=>$brand['id']))}" class="btn btn-primary btn-sm shiny">
+						                                            <i class="fa fa-edit"></i> 编辑
+						                                        </a>
+						                                        <a href="#" onClick="warning('确实要删除吗', '{:url('del',array('id'=>$brand['id']))}')" class="btn btn-danger btn-sm shiny">
+						                                            <i class="fa fa-trash-o"></i> 删除
+						                                        </a>
+						                                    </td>
+						                                </tr>
+						                            {/volist}
+						                        </tbody>
+						                    </table>
+						                </div>
+						                <div style="padding-top:10px; text-align:right;">
+						                {$brandRes->render()}
+						                </div>
+						                <div> </div>
+						            </div>
+						        </div>
+						    </div>
+						</div>
+					
+					</div>
+					<!-- /Page Body -->
+				</div>
+				<!-- /Page Content -->
+			</div>
+		</div>
+
+		<!--Basic Scripts-->
+		<script src="__ADMIN__/style/jquery_002.js"></script>
+		<script src="__ADMIN__/style/bootstrap.js"></script>
+		<script src="__ADMIN__/style/jquery.js"></script>
+		<!--Beyond Scripts-->
+		<script src="__ADMIN__/style/beyond.js"></script>
+
+	</body>
+
+</html>
